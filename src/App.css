@@ -1,38 +1,347 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+li,
+a {
+  color: black;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  /* background-color: #fff; */
+  font-feature-settings: "tnum", "tnum";
+  transition: all 0.3s ease 0s;
+  margin-top: 20px;
+}
+.fa-github {
+  font-size: 45px;
+}
+.main-view {
+  display: block;
+  /* width: 100%; */
+  margin: 0 auto;
   text-align: center;
+  justify-content: space-between;
 }
+/* .abcd {
+  width: 90%;
+} */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainbar {
+  padding: 10px 5% 0px;
+  margin: auto;
+  max-width: 1200px;
   display: flex;
-  flex-direction: column;
+
+  justify-content: space-between;
+
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  /* position: absolute; */
+}
+
+.logo {
+  /* margin-left: 90px !important; */
+  cursor: pointer;
+  margin-right: auto;
+}
+.items {
+  list-style: none;
+}
+.lastsection {
+  margin-left: 200px;
+}
+.items li {
+  display: inline-block;
+  padding: 0px 20px;
+  text-decoration: underline;
+}
+
+.li a :hover {
+  color: #0088a9;
+  /* color: blueviolet; */
+}
+
+.flex-row {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  margin-bottom: 25px;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  row-gap: 20px;
+}
+ul {
+  padding: 0px !important;
+}
+
+.cVJeoU {
+  margin-left: 30px !important;
+  padding: 0.8rem 2rem;
+  background: rgb(108, 99, 255);
   color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+  /* text-align: start; */
+}
+.text {
+  display: flexbox;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
-.App-link {
-  color: #61dafb;
+.text h1 {
+  margin-left: 100px !important;
+  text-align: left;
+  margin-bottom: 32px;
+  margin-top: 0px;
+  display: block;
+  font-size: 2em;
+
+  line-height: 2;
+  /* font-weight: bold; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.abcd {
+  margin-left: 100px !important;
+  padding-top: 35px;
+  font-size: 12px;
+  text-align: start;
+  margin-bottom: 0px;
+  font-weight: normal;
+  /* display: block; */
+
+  /* margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
+}
+/* h1 {
+  font-size: 40px !important;
+} */
+
+.card-img-top {
+  /* margin-left: px; */
+  width: 22%;
+}
+.card-title {
+  color: rgb(111, 19, 231);
+  font-weight: 350;
+  font-size: 1.6rem;
+}
+.card-text {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.hiring {
+  margin-left: 200px;
+}
+.margin {
+  margin-right: 20px;
+}
+.left-bar {
+  display: flex;
+  /* height: 100vh; */
+}
+.leftbar {
+  padding: 5px;
+  font-size: 1rem;
+  background-color: rgb(34, 34, 34);
+  height: 100%;
+}
+
+.user-icon {
+  outline-color: transparent;
+  align-items: center;
+}
+.icons {
+  margin: 1px;
+  justify-content: center;
+  list-style-type: none;
+}
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  /* align-items: center; */
+  margin-left: 20px;
+  height: 36px;
+  width: 40px;
+  background: transparent;
+  border: 0px;
+  border-radius: 2px;
+  padding: 0px;
+  color: rgb(230, 230, 230);
+}
+.rightbar {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin-left: 140px;
+}
+.rightbar {
+  padding: 5px;
+  font-size: 1rem;
+  background-color: rgb(34, 34, 34);
+  height: 100%;
+}
+
+.main {
+  border: 2px solid black;
+  width: 210mm;
+  height: 296mm;
+  background-color: white;
+  margin-left: 100px;
+}
+
+.inside-main {
+  height: 100%;
+  padding: 40px 25px;
+  position: relative;
+  /* column-gap: 10px; */
+}
+/* .mainheader {
+  border: 1px rgb(230, 13, 42);
+  border-radius: 5px;
+  padding: 25px 10px 10px;
+} */
+.pk {
+  border: 1px solid rgb(230, 13, 42);
+  border-radius: 5px;
+  padding: 25px 10px 10px;
+}
+
+.okay {
+  height: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.about {
+  height: 140px;
+  margin-left: 10px !important;
+}
+.input {
+  margin-top: 25px;
+}
+.cPwRGF {
+  border: 1px solid rgb(34, 34, 34);
+  height: 2.625rem;
+  padding: 0.625rem;
+  max-width: 100%;
+  background: rgb(66, 66, 66);
+  color: rgb(255, 255, 255);
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+.label h1 {
+  font-weight: 400;
+  font-size: 23px;
+  color: #1890ff;
+  position: absolute;
+}
+.phone {
+  color: "black";
+  float: "right";
+}
+.img {
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid;
+  border-radius: 25px;
+}
+.wrap {
+  font-size: 12px;
+  /* word-break: break-all; */
+  overflow-wrap: break-word;
+}
+.role {
+  margin-top: 30px;
+  color: #1890ffbf;
+  font-size: 15px;
+  font-weight: 400;
+}
+.relExperience {
+  /* padding-bottom: 20px; */
+  /* line-height: 5px; */
+  font-size: 10px;
+}
+.totalExp {
+  font-size: 10px;
+}
+.career {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 120px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.object {
+  font-size: 12px;
+}
+.technical {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 160px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.education {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 160px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.skill {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 130px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.approach {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 140px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.tools {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.experience {
+  margin-top: 10px;
+  height: 500px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.involvment {
+  margin-top: 10px;
+  height: 200px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.awards {
+  margin-top: 10px;
+  height: 150px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.search-results {
+  color: whitesmoke;
+  font-weight: bold;
 }

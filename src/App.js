@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { render } from "@testing-library/react";
+import "./App.css";
+import Editor from "./compnents/Editor";
+import FirstPage from "./compnents/FirstPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Demo /> */}
+      <Router>
+        <Routes>
+          <Route path="/editor" element={<Editor />} />
+          <Route path="/" element={<FirstPage />} />
+        </Routes>
+      </Router>
+      {/* <Navbar2 /> */}
     </div>
   );
 }
