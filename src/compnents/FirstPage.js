@@ -28,7 +28,7 @@ function FirstPage() {
           </nav>
           <div className="col-md-1">
             <a href="#">
-              <i class="fab fa-github pt-0"></i>
+              <i className="fab fa-github pt-0"></i>
             </a>
           </div>
         </header>

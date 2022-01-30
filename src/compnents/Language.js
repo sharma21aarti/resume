@@ -3,9 +3,15 @@ import React, { useState } from "react";
 function Language({ data, setData }) {
   const [showResult, setShowResult] = useState(false);
   const [languageData, setLanguageData] = useState([
-    { sName: "javaScript" },
-    { sName: "html5" },
+    { id: 1, item: "javaScript", value: 3 },
+    { id: 2, item: "html5", value: 5 },
+    { id: 3, item: "CSS", value: 3 },
   ]);
+  const [frameworks, setFrameworks] = useState([
+    { id: 1, item: "React", value: 4 },
+    { id: 2, item: "Angular", value: 3 },
+  ]);
+  // console.log("a", languageData);
   const handleChange = () => {
     setShowResult(!showResult);
   };
@@ -20,95 +26,172 @@ function Language({ data, setData }) {
           style={{ cursor: "pointer" }}
           className="nav-item"
         >
-          <i class="fas fa-wrench"></i>
+          <i className="fas fa-wrench"></i>
         </div>
         {showResult ? (
-          <Result data={languageData} setData={setLanguageData} />
+          <Result
+            frameworks={frameworks}
+            setFrameworks={setFrameworks}
+            languageData={languageData}
+            setLanguageData={setLanguageData}
+            data={data}
+            setData={setData}
+          />
         ) : null}
       </div>
     </div>
   );
 }
 
-const Result = ({ data, setData }) => {
-  // const inputHandler = (e, index) => {
-  //   console.log(e.target.value);
-  //   console.log(index);
+const Result = ({
+  languageData,
+  setLanguageData,
+  data,
+  setData,
+  frameworks,
+  setFrameworks,
+}) => {
+  const inputHandler = (e, index, type) => {
+    // let newData = { ...languageData };
 
-  //   let newData = data;
+    // newData[index][type] = e.target.value;
+    // setLanguageData(newData);
+    setLanguageData((prev) => {
+      console.log(index, type);
+      let newData = [...prev];
+      newData[index][type] = e.target.value;
+      return newData;
+    });
+    setData({ ...data, language: languageData });
+  };
 
-  //   newData[index]["sName"] = e.target.value;
-  //   setData(newData);
-  // };
-  console.log(data);
+  const addItem = () => {
+    // console.log(i);
+    // console.log(item);
+    setLanguageData([
+      ...languageData,
+      { id: languageData.length + 1, item: "default", value: 5 },
+    ]);
+    console.log("jsdgksgakj", { ...data, language: languageData });
+  };
+
+  const removeItem = (id) => {
+    const removeItem = languageData.filter((type, index) => index !== id);
+    console.log("filterd array", removeItem);
+
+    setLanguageData(removeItem);
+
+    setData({ ...data, language: removeItem });
+  };
+
+  const handler = (e, index, type) => {
+    // console.log("first", type);
+    setFrameworks((prev) => {
+      let newKey = [...prev];
+      newKey[index][type] = e.target.value;
+      return newKey;
+    });
+    setData({ ...data, frameworks: frameworks });
+  };
+
+  const removeData = (id) => {
+    const filterdItem = frameworks.filter((t, i) => i !== id);
+    setFrameworks(filterdItem);
+    console.log("first", filterdItem);
+    setData({ ...data, frameworks: filterdItem });
+  };
+
+  const addData = () => {
+    setFrameworks([
+      ...frameworks,
+      { id: frameworks.length, item: "default", value: "" },
+    ]);
+  };
 
   return (
     <div>
       <div id="results" className="search-results">
         <h2>Language</h2>
-        {data.map((name, index) => {
+        {languageData.map((item, index) => {
+          const progress = item.value * 20;
           return (
             <div key={index}>
-              <label>
-                name
-                {":  "}
+              <div>
+                <div className="">
+                  <input
+                    name={item.item}
+                    value={item.item || ""}
+                    onChange={(e) => inputHandler(e, index, "item")}
+                  />
+                </div>
                 <input
-                  name="skill"
-                  value="aarti"
-                  // onChange={(e) => inputHandler(e, index)}
+                  name={item.value}
+                  value={item.value || ""}
+                  onChange={(e) => inputHandler(e, index, "value")}
                 />
-              </label>
-              {/* <label>
-                code
-                {":  "}
-                <input
-                  name="skill"
-                  value={code}
-                  onChange={(e) => inputHandler(e, index)}
-                />
-              </label> */}
+
+                <div className="progress" style={{ width: "205px" }}>
+                  <div
+                    className="progress-bar"
+                    role="progressbar"
+                    style={{ width: `${progress}%` }}
+                  >
+                    <span className="sr-only">{item.value}</span>
+                  </div>
+                </div>
+              </div>
+              <button onClick={() => removeItem(index)}>
+                <i className="fal fa-trash"></i>
+              </button>
             </div>
           );
         })}
-        {/* <div>
-          <label className="input">
-            <div className="d-flex">
+        <button
+          onClick={() => {
+            addItem();
+          }}
+        >
+          Add Item
+        </button>
+        <hr style={{ color: "rgb(255, 255, 255)", height: "5px" }} />
+
+        <h2>Frameworks</h2>
+        {frameworks.map((item, index) => {
+          // const progress = item.value * 20;
+          return (
+            <div key={index}>
+              <input
+                value={item.item || ""}
+                name={item.item}
+                onChange={(e) => handler(e, index, "item")}
+              />
               <div>
                 <input
-                  name="skill"
-                  type="text"
-                  onChange={inputHandler}
-                  class="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+                  name={item.item}
+                  value={item.value || ""}
+                  type="number"
+                  onChange={(e) => handler(e, index, "value")}
                 />
+
+                <div className="progress" style={{ width: "205px" }}>
+                  <div
+                    className="progress-bar"
+                    role="progressbar"
+                    style={{ width: `${item.value * 20}%` }}
+                  >
+                    <span className="sr-only">{item.item}</span>
+                  </div>
+                </div>
               </div>
               <div>
-                <button
-                  // onClick={deleteItem}
-                  style={{
-                    width: "50px",
-                    height: "45px",
-                    paddingLeft: "10px",
-                    paddingRight: "10px",
-                  }}
-                >
-                  <i class="fas fa-trash"></i>
+                <button onClick={() => removeData(index)}>
+                  <i className="fal fa-trash"></i>
                 </button>
               </div>
             </div>
-          </label>
-        </div> */}
-        {/* <div>
-          <button
-            style={{
-              width: "50px",
-              height: "45px",
-              paddingLeft: "120px",
-              paddingRight: "140px",
-            }}
-          >
-            <i class="fal fa-plus-circle"></i>
-          </button>
-        </div> */}
+          );
+        })}
+        <button onClick={() => addData()}>Add Item</button>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
-import RightBar from "./RightBar";
+import Template1 from "./Template1";
 
 function Editor() {
   return (
     <div>
-      <RightBar />
+      <Template1 />
     </div>
   );
 }

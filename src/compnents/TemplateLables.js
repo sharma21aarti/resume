@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Intro({ data, setData }) {
+function TemplateLables({ data, setData }) {
   const [showResult, setShowResult] = useState(false);
   const handleChange = () => {
     setShowResult(!showResult);
@@ -16,7 +16,7 @@ function Intro({ data, setData }) {
           style={{ cursor: "pointer" }}
           className="nav-item"
         >
-          <i className="far fa-user"></i>
+          <i className="fas fa-tag"></i>
         </div>
         {showResult ? <Result data={data} setData={setData} /> : null}
       </div>
@@ -38,95 +38,129 @@ const Result = ({ data, setData }) => {
         className="search-results"
         style={{ marginLeft: "15px" }}
       >
-        <h2>Intro</h2>
+        <h2>Template Lables</h2>
         <div>
           <label className="input">
-            Name <br />
-            <input
-              name="name"
-              type="text"
-              placeholder="Jane Doe"
-              onChange={inputHandler}
-              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
-            />
-          </label>
-          <label className="input">
-            Image
             <br />
             <input
-              name="img"
+              name="Experience"
               type="text"
-              placeholder="src"
+              placeholder=" Experience"
               onChange={inputHandler}
               className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
             />
           </label>
           <label className="input">
-            Role <br />
-            <input
-              name="role"
-              type="text"
-              placeholder="software Developer"
-              onChange={inputHandler}
-              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
-            />
-          </label>
-          <label className="input">
-            Email
             <br />
             <input
-              name="email"
-              name="email"
+              name="Involvements"
               type="text"
-              placeholder="...@gmail.com"
+              placeholder="Key Project/Involvements"
               onChange={inputHandler}
               className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
             />
           </label>
           <label className="input">
-            Phone <br />
-            <input
-              name="phone"
-              maxLength="10"
-              pattern="[0-9]"
-              type="tel"
-              placeholder=".........."
-              onChange={inputHandler}
-              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
-            />
-          </label>
-          <label className="input">
-            Location
             <br />
             <input
-              name="location"
+              name="Certificates"
               type="text"
-              placeholder=""
+              placeholder=" Certificates And Awards"
               onChange={inputHandler}
               className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
             />
           </label>
           <label className="input">
-            Relavent Experience <br />
+            <br />
             <input
-              name="relExperience"
+              name="About "
               type="text"
-              placeholder="..Years"
+              placeholder="About me"
               onChange={inputHandler}
               className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
             />
           </label>
           <label className="input">
-            Total Experience <br />
+            <br />
             <input
-              name="totalExp"
+              name="Career "
               type="text"
-              placeholder="Jane Doe"
+              placeholder="Career Objective"
               onChange={inputHandler}
               className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
             />
           </label>
           <label className="input">
+            <br />
+            <input
+              name="Technical "
+              type="text"
+              placeholder="Technical Expertise"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          <label className="input">
+            <br />
+            <input
+              name="Exposure"
+              type="text"
+              placeholder="Skills / Exposure"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          <label className="input">
+            <br />
+            <input
+              name="Methodology"
+              type="text"
+              placeholder="Methodology / Approach"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          <label className="input">
+            <br />
+            <input
+              name="Tools"
+              type="text"
+              placeholder="Tools"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          <label className="input">
+            <br />
+            <input
+              name="Education"
+              type="text"
+              placeholder="Education"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          <label className="input">
+            <br />
+            <input
+              name="RelevantExperience"
+              type="text"
+              placeholder="Relevant Experience"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          <label className="input">
+            <br />
+            <input
+              name="TotalExperience"
+              type="text"
+              placeholder="Total Experience"
+              onChange={inputHandler}
+              className="ant-input IntroEdit__Input-sc-1acngfg-2 cPwRGF"
+            />
+          </label>
+          {/* <label className="input">
             Summary <br />
             <section>
               <textarea
@@ -139,8 +173,8 @@ const Result = ({ data, setData }) => {
                 }}
               />
             </section>
-          </label>
-          <label className="input">
+          </label> */}
+          {/* <label className="input">
             Objective <br />
             <section>
               <textarea
@@ -153,11 +187,11 @@ const Result = ({ data, setData }) => {
                 }}
               />
             </section>
-          </label>
+          </label> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default Intro;
+export default TemplateLables;
